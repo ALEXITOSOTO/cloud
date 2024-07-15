@@ -1,4 +1,4 @@
-const Categorie = require('../models/Categorie');
+const Categorie = require('../models/Categorie'); 
 //Crear una funcion para llamado a select del modelo
 //Envia parametros req y res 
 //req significa request = peticion
