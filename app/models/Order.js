@@ -13,7 +13,7 @@ class Order extends Model { // Creo herencia de Model
                 id: { type: 'integer' },
                 numero: { type: 'string' },
                 direccion: { type: 'string' },
-                total_precio: { type: 'number' },
+                total_precio: { type: 'string' },
                 estado: { type: 'string' },
             }
         };

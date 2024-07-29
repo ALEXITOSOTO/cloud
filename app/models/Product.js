@@ -12,8 +12,8 @@ class Product extends Model { // Creo herencia de Model
             properties: { // estructura de los campos
                 id: { type: 'integer' },
                 nombre: { type: 'string' },
-                precio: { type: 'number' },
-                stock: { type: 'integer' },
+                precio: { type: 'string' },
+                stock: { type: 'string' },
             }
         };
     }

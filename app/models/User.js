@@ -1,15 +1,15 @@
-const { Model } = require('objection'); // Llamar a Model de la libreria objection 
+const { Model } = require('objection');
 
-class User extends Model { // Creo herencia de Model
-    static get tableName() { // Especifica el nombre de la tabla
+class User extends Model {
+    static get tableName() {
         return 'users';
     }
 
-    static get jsonSchema() { // Especifica la estructura de la tabla
+    static get jsonSchema() {
         return {
-            type: 'object', // object para un dato, array para un listado
-            required: ['usuario', 'email'], // campos requeridos 
-            properties: { // estructura de los campos
+            type: 'object',
+            required: ['usuario', 'email'],
+            properties: {
                 id: { type: 'integer' },
                 usuario: { type: 'string' },
                 email: { type: 'string', format: 'email' },
@@ -18,20 +18,20 @@ class User extends Model { // Creo herencia de Model
         };
     }
 
-    static async getUsers() { // Metodo para listar usuarios 
-        return await User.query(); // Select * from users
+    static async getUsers() {
+        return await User.query();
     }
 
-    static async insert(data) { // Metodo para insertar usuarios 
-        return await User.query().insert(data); // insert into users values (...)
+    static async insert(data) {
+        return await User.query().insert(data);
     }
 
-    static async update(data, id) { // Metodo para editar usuarios
-        return await User.query().patchAndFetchById(id, data); // update users set data where id = 0
+    static async update(data, id) {
+        return await User.query().patchAndFetchById(id, data);
     }
 
-    static async delete(id) { // Metodo para eliminar usuarios
-        return await User.query().deleteById(id); // delete from users where id = 0
+    static async delete(id) {
+        return await User.query().deleteById(id);
     }
 }
 

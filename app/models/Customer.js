@@ -13,8 +13,8 @@ class Customer extends Model{ //Creo herencia de Model
                 id: {type: 'integer'},
                 name: {type: 'string'},
                 email: {type: 'string', format:'email'},
-                date: {type: 'string', format: 'date-time'},
-                age: {type: 'integer'}
+                age: {type: 'string'},
+                fkid_user: { type: 'string' } // Clave foránea
 
             }
         };
